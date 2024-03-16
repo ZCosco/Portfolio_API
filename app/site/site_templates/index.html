@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-dark text-light text-center shadow">
+    <div class="container p-5 bg-dark">
+        <div class="row">
+            <div class="d-md-flex bg-dark align-items-center justify-content-evenly">
+                <h1 class="col text-center"><br>Zach's Portfolio</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-light text-center">
+    <div class="container">
+        <div class="project-grid">
+            {% for project in coding_temple_projects %}
+            <div class="project">
+                <div class="project-details">
+                    <h2>{{ project.project_name }}</h2>
+                    <p>Description: {{ project.description }}</p>
+                    <p>Github Link: <a href="{{ project.github_link }}">{{ project.github_link }}</a></p>
+                    <p>Programming Languages: {{ project.programming_languages }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
